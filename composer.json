@@ -4,7 +4,7 @@
     "description": "publica.la exercises",
     "license": "MIT",
     "require": {
-        "php": "^7.3",
+        "php": "^7.4",
         "facade/ignition": "^2.0",
         "fideloper/proxy": "^4.0",
         "fruitcake/laravel-cors": "^2.0",
