@@ -26,7 +26,7 @@ The solution has to be presented in written form, a markdown file in the repo is
 After you finish, we'll have a call where you present your solution for point **1** and your plan for point **2**. We'll very interested in every little detail, complication or bloquer you found, compromises you made, how would you improve what you've done, if you found something interesting, if you are particularly happy with something in the solution, etc.
 
 ## What's included
-This repository contains a blank [Laravel](https://laravel.com) project, to be used as a container for the exercise solution. To run it, you'll need PHP 7.3, [Composer](https://getcomposer.org/) and [Docker](https://www.docker.com/products/docker-desktop) installed.
+This repository contains a blank [Laravel](https://laravel.com) project, to be used as a container for the exercise solution. To run it, you'll need PHP 7.4, [Composer](https://getcomposer.org/) and [Docker](https://www.docker.com/products/docker-desktop) installed.
 The project uses [Vessel](https://vessel.shippingdocker.com/), a simple and easy to use Docker based Laravel development environment.  
 
 #### Step by step instructions:
