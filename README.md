@@ -24,7 +24,7 @@ Develop a feature that would allow a user to search inside a book, displaying a 
     - The solution has to be presented online, and should be kept there and working for up to 15 days after the presentation.
 
 2. **Think big**:  
-Imagine you have one entire month to develop the solution, would you take a different approach? Think about how to increase the relevance of the results, scalability, performance and content security. Describe it in as many details as you see fit.
+Imagine you have 2 to 3 entire months to develop the solution, would you take a different approach? Think about how to increase the relevance of the results, scalability, performance and content security. Describe it in as many details as you see fit.
     - The solution has to be presented in written form, a markdown file in the repo is more than enough. You may include a diagram or anything you see useful.
 
 3. **Presentation**:  
