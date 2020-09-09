@@ -21,7 +21,7 @@ Develop a feature that would allow a user to search inside a book, displaying a 
     - You can find the book in `./storage/exercise-files/Eloquent_JavaScript.pdf` and, for convenience, there's also a `Eloquent_JavaScript.json` file with the text content of each page.
     - There's a demo of this kind of functionality [here](https://alephdigital.publica.la/reader/eloquent-javascript).
     - You can use any tool or strategy, for any part of your solution. Keep in mind you're now a member of the team, so go ahead and ask for feedback if you need it.
-    - The solution has to be presented online, and should be kept there and working for up to 15 days after the presentation.
+    - The solution has to be presented hosted online so that it can be tried before the presentation. It should also be kept there and working for up to 15 days after the presentation.
 
 2. **Think big**:  
 Imagine you have 2 to 3 entire months to develop the solution, would you take a different approach? Think about how to increase the relevance of the results, scalability, performance and content security. Describe it in as many details as you see fit.
