@@ -205,10 +205,12 @@ if [ $# -gt 0 ]; then
         echo "VESSEL: Try starting it:"
         echo "./vessel start"
 
-
     # Start up containers
     elif [ "$1" == "start" ]; then
         $COMPOSE up -d
+        if [ ! -d ./vendor ];then
+            $COMPOSE exec -u vessel app composer install
+        fi
 
     # Stop the containers
     elif [ "$1" == "stop" ]; then
