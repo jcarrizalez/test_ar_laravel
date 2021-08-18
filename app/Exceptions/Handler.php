@@ -46,6 +46,15 @@ class Handler extends ExceptionHandler
      */
     public function render($request, Throwable $exception)
     {
-        return parent::render($request, $exception);
+        
+        if(config('app.debug') === true){
+
+            return parent::render($request, $exception);
+        }
+
+        return jsend_error(
+            $exception->getMessage()?? "Exception NO Message", 
+            $exception->getCode()?? 500
+        );
     }
 }
