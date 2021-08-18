@@ -211,6 +211,7 @@ if [ $# -gt 0 ]; then
         if [ ! -d ./vendor ];then
             $COMPOSE exec -u vessel app composer install
         fi
+        $COMPOSE exec -u vessel app composer dumpautoload
 
     # Stop the containers
     elif [ "$1" == "stop" ]; then
