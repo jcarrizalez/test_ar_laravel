@@ -1,4 +1,5 @@
 <?php
+
 if (!function_exists("jsend_error")) {
     /**
      * @param string $message Error message
@@ -12,7 +13,7 @@ if (!function_exists("jsend_error")) {
     {
         $response = [
             "status" => "false",
-            "data" => $message
+            "message" => $message
         ];
         return response()->json($response, $code, $extraHeaders);
     }
@@ -31,7 +32,7 @@ if (!function_exists("jsend_fail")) {
             "data" => $data
         ];
         
-        #$extraHeaders['Authorization'] = app('Context')->getJwt();
+        #$extraHeaders['Authorization'] = #debo crear token jwt;
 
         return response()->json($response, $status, $extraHeaders);
     }
@@ -51,9 +52,31 @@ if (!function_exists("jsend_success")) {
         ];
         return response()->json($response, $status, $extraHeaders);
 
-        $extraHeaders['Authorization'] = app('Context')->getJwt();
+        #$extraHeaders['Authorization'] = #debo crear token jwt;
 
-        return response()->json($response, $status, $extraHeaders)->cookie('Authorization', app('Context')->getJwt(), 60, '/', 'test_ar_laravel');
+        return response()->json($response, $status, $extraHeaders)
+            ->cookie('Authorization', null, 60, '/', 'test_ar_laravel');
     }
 }
 
+if (!function_exists("file_success")) {
+    /**
+     * @param string | storage_path
+     * @param int $status HTTP status code
+     * @param array $extraHeaders
+     * @return \Illuminate\Contracts\Routing\ResponseFactory|\Symfony\Component\HttpFoundation\Response
+     */
+    function file_success(string $file, $status = 200, $extraHeaders = [])
+    {
+        if (!File::exists($file)) {
+            return jsend_error('Archivo no Disponible', 404);
+            abort(404);
+        }
+
+        #$extraHeaders['Authorization'] = #debo crear token jwt;
+        
+        $extraHeaders['Content-Type'] = File::mimeType($file);
+
+        return response()->file($file, $extraHeaders);
+    }
+}
