@@ -22,6 +22,6 @@ Route::group(['middleware' => [/*'auth'*/]], function() {
 	
 		Route::get(null, 			'BookController@index')->name('books');
 		Route::get('{slug}', 		'BookController@show')->name('book-show');
-		Route::get('{slug}/filter', 'BookController@showFilter')->name('book-show-filter');
+		Route::get('{slug}/content', 'BookController@showFilter')->name('book-show-filter');
 	});
 });
