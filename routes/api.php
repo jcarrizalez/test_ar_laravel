@@ -15,7 +15,7 @@ use App\Http\Controllers\BookController;
 */
 
 # RUTAS SOLO CON JWT
-Route::group(['middleware' => [/*'auth'*/]], function() {
+Route::group(['middleware' => ['jwt.auth']], function() {
 
 	#grupo de rutas para libros
 	Route::group(['prefix' => 'books'], function() {
