@@ -44,7 +44,7 @@ class BookShowService
 
             throw new Exception('No existe la pagina ',404);
         }
-        $file = storage_path("books/{$response['folder']}/pages/{$response['image']}");
+        $file = $this->file($response['folder'], $response['image']);
 
         if(!file_exists($file)){
 
@@ -55,5 +55,16 @@ class BookShowService
         $this->cache->put($cache, $file);
 
         return $file;
+    }
+
+    /**
+     * es otro metodo para poder falsear en los test
+     * @param $folder string |$image string
+     *
+     * @return string
+     */
+    private function file(string $folder, string $image) :string
+    {
+        return storage_path("books/{$folder}/pages/{$image}");
     }
 }
