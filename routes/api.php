@@ -1,6 +1,7 @@
 <?php
 
 use Illuminate\Http\Request;
+use App\Http\Controllers\BookController;
 
 /*
 |--------------------------------------------------------------------------
@@ -12,3 +13,15 @@ use Illuminate\Http\Request;
 | is assigned the "api" middleware group. Enjoy building your API!
 |
 */
+
+# RUTAS SOLO CON JWT
+Route::group(['middleware' => [/*'auth'*/]], function() {
+
+	#grupo de rutas para libros
+	Route::group(['prefix' => 'books'], function() {
+	
+		Route::get(null, 			'BookController@index')->name('books');
+		Route::get('{slug}', 		'BookController@show')->name('book-show');
+		Route::get('{slug}/filter', 'BookController@showFilter')->name('book-show-filter');
+	});
+});
