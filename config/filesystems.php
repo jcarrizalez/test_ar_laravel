@@ -54,7 +54,25 @@ return [
             'url' => env('APP_URL').'/storage',
             'visibility' => 'public',
         ],
-
+        'books' => [
+            'driver' => 'local',
+            'root' => storage_path('books'),
+            'url' => env('APP_URL').'/storage',
+            'visibility' => 'pages',
+        ],
+        'sftp' => [
+            /**
+            * Settings for SSH key based authentication...
+            * APP_ENV= folder where it is stored according .env
+            */
+            'driver' => 'sftp',
+            'root' => env('FILESYSTEM_SFTP_ROOT', '/var/www'),
+            'host' => env('FILESYSTEM_SFTP_HOST', 'localhost'),
+            'port' => env('FILESYSTEM_SFTP_PORT', 22),
+            'username' => env('FILESYSTEM_SFTP_USERNAME', 'assets'),
+            'password' => env('FILESYSTEM_SFTP_PASSWORD'),
+            //'timeout' => 30
+        ],
         's3' => [
             'driver' => 's3',
             'key' => env('AWS_ACCESS_KEY_ID'),
