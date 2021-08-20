@@ -208,11 +208,15 @@ if [ $# -gt 0 ]; then
     # Start up containers
     elif [ "$1" == "start" ]; then
         $COMPOSE up -d
+        # INI Temporal solo para el test
         if [ ! -d ./vendor ];then
+            mkdir vendor;
+            chmod -R 777 vendor;
             $COMPOSE exec -u vessel app composer install;
             $COMPOSE exec -u vessel app php artisan migrate;
             $COMPOSE exec -u vessel app php artisan db:seed;
         fi
+        # FIN Temporal solo para el test
 
     # Stop the containers
     elif [ "$1" == "stop" ]; then
