@@ -209,7 +209,9 @@ if [ $# -gt 0 ]; then
     elif [ "$1" == "start" ]; then
         $COMPOSE up -d
         if [ ! -d ./vendor ];then
-            $COMPOSE exec -u vessel app composer install
+            $COMPOSE exec -u vessel app composer install;
+            $COMPOSE exec -u vessel app php artisan migrate;
+            $COMPOSE exec -u vessel app php artisan db:seed;
         fi
 
     # Stop the containers

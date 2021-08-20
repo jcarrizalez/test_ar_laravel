@@ -1,5 +1,14 @@
 # BACKEND
 
+## Execute
+-Modifique el script ./vessel en el "start", valido si no existe vendor y ejecuto:
+```bash
+./vessel exec app composer install;
+./vessel exec app php artisan migrate;
+./vessel exec app php artisan db:seed;
+```
+este paso anterior para que tengan la instancia ya configurada con datos
+
 ## Por Hacer
 - Crear un Context para administrar JWT en sesión.
 - Terminar Middleware JwtAuth mediante uso del Context y JWT
@@ -24,11 +33,10 @@ no esta listos, deje solo un archivo, pero me dio falla con la versión y es alg
 ```bash
 ./vendor/bin/phpunit
 ```
-# FRONTEND
+# [FRONTEND](http://localhost:8881/) 
 
 ## Codigo Fuente
-	[GIT_TEST_REACT_JS](https://github.com/jcarrizalez/test_ar_react_js) 
-
+[GIT_TEST_REACT_JS](https://github.com/jcarrizalez/test_ar_react_js) 
 
 ## Execute
 - En el proyecto BACKEND No Modifique su docker-composer, para no complicar las cosas en tiempo, pero deje una carpeta llamada "build_reactjs", por lo que con su php local basta para ver la web corriendo en un navegador, así que con cd PATH del proyecto y un php -S alcanza.
