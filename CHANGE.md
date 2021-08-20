@@ -1,6 +1,6 @@
-## BACKEND
+# BACKEND
 
-# Por Hacer
+## Por Hacer
 - Crear un Context para administrar JWT en sesión.
 - Terminar Middleware JwtAuth mediante uso del Context y JWT
 - Crear endpoint auth que será el encargado de validar la aplicación que consume esta api y dar los permisos necesarios
@@ -19,25 +19,25 @@
 	user
 }
 
-#Test
+##Test
 no esta listos, deje solo un archivo, pero me dio falla con la versión y es algo a revisar, me fucionan en php7.2 y phpunit/phpunit 7.0.
 ```bash
 ./vendor/bin/phpunit
 ```
-## FRONTEND
+# FRONTEND
 
-# Codigo Fuente
+## Codigo Fuente
 	[GIT_TEST_REACT_JS](https://github.com/jcarrizalez/test_ar_react_js) 
 
 
-# Execute
+## Execute
 - En el proyecto BACKEND No Modifique su docker-composer, para no complicar las cosas en tiempo, pero deje una carpeta llamada "build_reactjs", por lo que con su php local basta para ver la web corriendo en un navegador, así que con cd PATH del proyecto y un php -S alcanza.
 ```bash
 php -S localhost:8881 -t ./build_reactjs/
 ```
 
 
-# Por Hacer
+## Por Hacer
 - El maquetado le falta mucho, levante cualquier cosa que fuera rápido porque la intención era consumir la api
 - Crear una paginas de error, modals etc.
 - Terminar el ScrollViewBook que es cuando llegas al final del div, cargue otro seguido a ese div.
