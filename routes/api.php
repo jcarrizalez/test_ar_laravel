@@ -21,7 +21,7 @@ Route::group(['middleware' => ['jwt.auth']], function() {
 	Route::group(['prefix' => 'books'], function() {
 	
 		Route::get(null, 			'BookController@index')->name('books');
-		Route::get('{slug}', 		'BookController@show')->name('book-show');
-		Route::get('{slug}/content', 'BookController@showFilter')->name('book-show-filter');
+		Route::get('{slug}', 		'BookController@file')->name('book-file');
+		Route::get('{slug}/content', 'BookController@content')->name('book-content');
 	});
 });

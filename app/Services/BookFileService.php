@@ -11,7 +11,7 @@ use Exception;
  *
  * 
  */
-class BookShowService
+class BookFileService
 {
     protected $model;
     protected $cache;
@@ -40,7 +40,7 @@ class BookShowService
             return $response;
         }
         #si no existe en BD muestro un 404
-        if(null === $response = $this->model->show($slug, $page)->first()){
+        if(null === $response = $this->model->file($slug, $page)->first()){
 
             throw new Exception('No existe la pagina ',404);
         }

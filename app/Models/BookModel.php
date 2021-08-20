@@ -36,7 +36,7 @@ class BookModel extends Model
     }
 
 
-    public function scopeShow($query, string $slug, int $page) :Builder
+    public function scopeFile($query, string $slug, int $page) :Builder
     {
         return $query
             ->select("{$this->table}.folder","{$this->contents}.image")
@@ -48,7 +48,7 @@ class BookModel extends Model
     }
 
 
-    public function scopeShowFilter($query, string $slug, $search = null) :Builder
+    public function scopeContent($query, string $slug, $search = null) :Builder
     {
         $query
             ->select("{$this->contents}.page", "{$this->contents}.text_content")

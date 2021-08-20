@@ -11,7 +11,7 @@ use App\Shared\Cache;
  *
  * 
  */
-class BookShowFilterService
+class BookContentService
 {
     protected $model;
     protected $cache;
@@ -45,7 +45,7 @@ class BookShowFilterService
 
         #se pagina el resultado
         $response = $this->paginator->paginate(
-            $this->model->showFilter($slug, $search),   #Builder $query
+            $this->model->content($slug, $search),   #Builder $query
             $count,                                     #$count = 10
             $page                                       #$page = null
         );

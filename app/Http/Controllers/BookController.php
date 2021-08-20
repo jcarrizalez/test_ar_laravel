@@ -5,8 +5,8 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 
 use App\Services\BookIndexService;
-use App\Services\BookShowService;
-use App\Services\BookShowFilterService;
+use App\Services\BookFileService;
+use App\Services\BookContentService;
 use Exception;
 
 /**
@@ -16,26 +16,26 @@ use Exception;
  */
 class BookController extends Controller
 {
-    protected $show;
+    protected $file;
     protected $index;
-    protected $show_filter;
+    protected $content;
     protected $page;
     protected $count;
     protected $search;
 
     public function __construct(
         Request $request, 
-        BookShowService $show,
+        BookFileService $file,
         BookIndexService $index,
-        BookShowFilterService $show_filter
+        BookContentService $content
     )
     {
-        $this->index        = $index;
-        $this->show         = $show;
-        $this->show_filter  = $show_filter;
-        $this->page         = (int) $request->get('page', 1);
-        $this->count        = (int) $request->get('count', 10);
-        $this->search       = $request->get('search', null);
+        $this->index    = $index;
+        $this->file     = $file;
+        $this->content  = $content;
+        $this->page     = (int) $request->get('page', 1);
+        $this->count    = (int) $request->get('count', 10);
+        $this->search   = $request->get('search', null);
     }
 
     /**
@@ -58,10 +58,10 @@ class BookController extends Controller
      * @bodyParam slug string required nombre del libro.
      * @bodyParam page string not_required default '1'
      */
-    public function show(string $slug) :object
+    public function file(string $slug) :object
     {
         return file_success(
-            $this->show->make(
+            $this->file->make(
                 $slug,          #string slug
                 $this->page,    #int page
             )
@@ -74,10 +74,10 @@ class BookController extends Controller
      * @bodyParam count string not_required default '10'
      * @bodyParam search string not_required default null
      */
-    public function showFilter(string $slug) :object
+    public function content(string $slug) :object
     {
         return jsend_success(
-            $this->show_filter->make(
+            $this->content->make(
                 $slug,          #string slug
                 $this->page,    #int page
                 $this->count,   #int count
